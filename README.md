@@ -1,12 +1,12 @@
-# Implementing QE on RiceDO and TreatO
+# agriculture-embeddings
 
-This repository implements Quantum Embedding from "Quantum embedding of knowledge for reasoning.", a paper published in NerurlISP 2019. The code in this repo is based on the original implementation of the paper's authors [repo](https://github.com/IBM/e2r/).
+This repository implements Quantum Embedding from "Quantum embedding of knowledge for reasoning.", a paper published in NerurlISP 2019 on RiceDO and TreatO. The code in this repo is based on the original implementation of the paper's authors [repo](https://github.com/IBM/e2r/) and pykeen implementation for RiceDO and TreatO.
 
 ## Instructions to use this repo
 
 1. Download both datasets `RiceDO` and `TreatO`. Then, put them in `ricedo/data`, `treato/data` and rename them `RiceDO-Version2.owl` and `TreatO-Version2.owl` respectively.
 
-2. Install python environment. We tested on only python 3.12.3 on Windows 11, if you want to use other version, do it on your own risk. You can install every using `conda`.
+2. Install python environment. We tested on only python 3.12.3 on Windows 11, if you want to use other version, do it on your own risk. You can install every using `conda`. The code will use CUDA automatically if you have torch with cuda install. However, we only tested on CPU only.
 
     ```bash
     conda env create -f env.yml
@@ -14,11 +14,12 @@ This repository implements Quantum Embedding from "Quantum embedding of knowledg
     ```
 
     There might be chances that some package won't install on other OS (such as windows API) or worse the packages didn't register in conda registry. You can try install python 3.12.3 and install packages on your own using pip.
+    Note 16/7/2024: pykeen 1.10.2 cannot run with numpy 2.0.0 (its pretty new at the moment). So, i add specification for numpy (<2.0.0).
 
     ```bash
     conda create -n e2r python=3.12.3
     conda activate e2r
-    pip install numpy pandas matplotlib tdqm pykeen owlready
+    pip install numpy<2.0.0 pandas matplotlib tdqm pykeen owlready
     # for install pytorch, each device has its own way. Seek help here https://pytorch.org/ 
     ```
 
