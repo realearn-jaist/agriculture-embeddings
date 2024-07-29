@@ -1,0 +1,1 @@
+put RiceDO-Version2.owl here and run parse_and_split_data.py to split it. see more on the repo readme.
