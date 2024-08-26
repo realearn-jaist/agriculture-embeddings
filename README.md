@@ -13,14 +13,16 @@ This repository implements Quantum Embedding from "Quantum embedding of knowledg
     conda activate e2r
     ```
 
-    There might be chances that some package won't install on other OS (such as windows API) or worse the packages didn't register in conda registry. You can try install python 3.12.3 and install packages on your own using pip.
-    Note 16/7/2024: pykeen 1.10.2 cannot run with numpy 2.0.0 (its pretty new at the moment). So, i add specification for numpy (<2.0.0).
+    There might be chances that some package won't install on other OS (such as windows API) or worse the packages didn't register in conda registry. You can try install python 3.12.3 and install packages on your own using pip. 
+    Note 16/7/2024: pykeen 1.10.2 cannot run with numpy 2.0.0 (its pretty new at the moment). So, i add specification for numpy (==1.26.4).
 
     ```bash
     conda create -n e2r python=3.12.3
     conda activate e2r
-    pip install numpy<2.0.0 pandas matplotlib tdqm pykeen owlready
-    # for install pytorch, each device has its own way. Seek help here https://pytorch.org/ 
+    pip install numpy==1.26.4 pandas matplotlib tdqm owlready
+    # for install pytorch (version 2.2.1), each device has its own way. Seek help here https://pytorch.org/
+    # Then install pykeen later
+    pip install pykeen
     ```
 
 3. Parse and Spliting data.
@@ -54,7 +56,7 @@ This repository implements Quantum Embedding from "Quantum embedding of knowledg
 
 #### Train QE
 
-*Make sure you move your terminal inside the dataset folder.*
+*Make sure you move your terminal inside the dataset folder and finished all previous steps.*
 
 You can setup the hyperparameters of QE in the `reasonE.train.py` file. Then, you can train for QE using this command.
 
