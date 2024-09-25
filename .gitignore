@@ -182,3 +182,8 @@ treato/pykeen_eval/*
 # QE's result
 ricedo/model/*
 treato/model/*
+
+# plot
+ricedo/qe_plot/*
+treato/qe_plot/*
+

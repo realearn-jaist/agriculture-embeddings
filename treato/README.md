@@ -1,6 +1,4 @@
-This directory contains code and data used for experiment on LUBM1U dataset.
-
-After downloading (and before running any of the scripts here), please unzip 'data.zip'. This should create 'data/' directory containing data needed for error-free execution of the scripts.
+This directory contains code and data used for experiment on TreatO dataset.
 
 Simply running the script 'reasonE.test.py' should use trained model as stored in directory 'model/' and generate accuracy numbers as reported in the paper.
 

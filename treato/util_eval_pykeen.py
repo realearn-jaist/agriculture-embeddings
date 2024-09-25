@@ -1,11 +1,12 @@
 import os
 import matplotlib.pyplot as plt
 
-def plot_loss(results, metrics_path):
-    loss = results["losses"]
+def plot_loss(loss, metrics_path):
+    plt.figure()
     plt.plot(loss, label="training loss")
     plt.legend()
     plt.savefig(os.path.join(metrics_path, "loss.png"))
+    plt.clf()
 
 # metrics_names must be in results.json file from pykeen
 metrics_names = [
