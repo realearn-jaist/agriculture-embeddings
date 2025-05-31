@@ -1,8 +1,7 @@
 import os
 import matplotlib.pyplot as plt
 
-def plot_loss(results, metrics_path):
-    loss = results["losses"]
+def plot_loss(loss, metrics_path):
     plt.figure()
     plt.plot(loss, label="training loss")
     plt.legend()
